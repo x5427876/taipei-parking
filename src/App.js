@@ -14,6 +14,7 @@ const App = () => {
   const [area, setArea] = useState('中正區')
   const [dist, setDist] = useState('close')
   const [isCheck, setIsCheck] = useState(true)
+  const [centerLocation, setCenterLocation] = useState()
 
   const dispatch = useDispatch()
 
@@ -24,11 +25,13 @@ const App = () => {
     dispatch(getParkLocationAsync())
     dispatch(getParkIdAsync())
   }, [dispatch])
+  console.log(centerLocation)
 
   const myLocaition = useSelector(state => state.location.myLocaition)
   const parkLocation = useSelector(state => state.location.location[0])
   const LocationId = useSelector(state => state.location.locationId[0])
   const locationAvailable = useSelector(state => state.location.locationAvailable[0])
+
 
   const renderMap = myLocaition.lng !== 0 && parkLocation
     ?.filter((station) => station.area === area && LocationId.indexOf(Number(station.id)) > 0)
@@ -87,12 +90,12 @@ const App = () => {
                   return (distance(myLocaition.lat, myLocaition.lng, destinationB.lat, destinationB.lng, 'K') - distance(myLocaition.lat, myLocaition.lng, destinationA.lat, destinationA.lng, 'K'))
                 }
               })
-              .map((station) => <List station={station} myLocaition={myLocaition} available={locationAvailable[LocationId.indexOf(Number(station.id))].availablecar} />)
+              .map((station) => <List station={station} myLocaition={myLocaition} available={locationAvailable[LocationId.indexOf(Number(station.id))].availablecar} setCenterLocation={setCenterLocation} />)
             }
           </div>
         </div>
         <div id='map' className='col-start-1 col-end-5 lg:col-start-2 lg:col-end-5 h-[90vh] flex justify-center items-center'>
-          {myLocaition.lng !== 0 && <Map renderMap={renderMap} />}
+          {myLocaition.lng !== 0 && <Map renderMap={renderMap} centerLocation={centerLocation ? centerLocation : myLocaition} />}
         </div>
       </div >
     </div >

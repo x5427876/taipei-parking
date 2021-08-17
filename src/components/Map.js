@@ -6,7 +6,7 @@ import twd97tolatlng from '../twd97tolatlng'
 
 
 
-export default function SimpleMap({ renderMap }) {
+export default function SimpleMap({ renderMap, centerLocation }) {
     const myLocation = useSelector(state => state.location.myLocaition)
 
 
@@ -25,8 +25,9 @@ export default function SimpleMap({ renderMap }) {
         <div style={{ height: '100%', width: '100%' }}>
             <GoogleMapReact
                 bootstrapURLKeys={{ key: "AIzaSyDCEwHaQxqctjyiFPQKOfksUT6qMRVJWuU" }}
-                defaultCenter={myLocation}
+                defaultCenter={centerLocation}
                 defaultZoom={16}
+                center={centerLocation}
             >
                 <MyLocationMaker
                     lat={myLocation.lat}

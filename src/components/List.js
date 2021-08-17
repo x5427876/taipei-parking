@@ -3,12 +3,12 @@ import React from 'react'
 import distance from '../distance'
 import twd97_to_latlng from '../twd97tolatlng'
 
-const List = ({ station, myLocaition, available }) => {
+const List = ({ station, myLocaition, available, setCenterLocation }) => {
     const destination = twd97_to_latlng(station.tw97x, station.tw97y)
     const howFar = distance(myLocaition.lat, myLocaition.lng, destination.lat, destination.lng, 'K')
 
     return (
-        <div className='border my-4 bg-gray-100 mx-2 p-3 rounded-lg hover:bg-blue-200'>
+        <div className='border my-4 bg-gray-100 mx-2 p-3 rounded-lg hover:bg-blue-200' onClick={() => { setCenterLocation({ lat: destination.lat, lng: destination.lng }) }}>
             <div class='flex justify-between'>
                 <p className='text-xl font-bold'>{station.name}</p>
             </div>
