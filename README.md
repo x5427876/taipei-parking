@@ -1,31 +1,11 @@
-# Tailwind JIT Starter React
+# 台北停車通
 
-Feel free to use the sample code to setup tailwind with jit for your app. The project will act as a codebase for my [blog](http://savio.xyz/)
+快速查詢台北市各區現有停車位數量，一鍵連結至Google Map導入導航路線
 
-## Setup
+資料來源：Google Map API & 台北市政府停車資訊開放API </br>
 
-1. Clone repo
+使用工具：React, Redux Toolkit, TailwindCSS
 
-```bash
-git clone https://github.com/saviomartin/tailwind-jit-starter-react.git
-```
+## Demo
 
-2. Install Packages
-
-```bash
-npm i
-```
-
-3. Watch Css
-
-```bash
-npm run watch:css
-```
-
-4. Start Server
-
-```bash
-npm start
-```
-
-I hope it works for you, feel free to star ⭐️ the repo. [Give Me a follow on Github](https://github.com/saviomartin)
+電腦版介面： ![電腦版介面] (https://i.imgur.com/2DJV6lc.jpg)
