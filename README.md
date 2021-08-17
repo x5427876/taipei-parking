@@ -6,6 +6,13 @@
 
 使用工具：React, Redux Toolkit, TailwindCSS
 
-## Demo
+# Demo
 
-電腦版介面： ![这里写图片描述](https://i.imgur.com/2DJV6lc.jpg)
+### 電腦版介面： 
+![電腦版](https://i.imgur.com/2DJV6lc.jpg)
+
+
+### 手機版介面： 
+![手機板](https://i.imgur.com/J2jmHRK.jpg)
+![手機板](https://i.imgur.com/C6gUah1.jpg)
+
